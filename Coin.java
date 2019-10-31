@@ -9,6 +9,19 @@ public class Coin {
   public Coin(){
     flip();
   }
+
+
+
+  //The accesor method for the face variable (a getter)
+  public int getFace(){
+    return face;
+  }
+
+  //the mutater method fo the face variable (a setter)
+  public void setFace(int newFace){
+    face = newFace;
+  }
+
   //assains a randomly chosen value to the face of the coin
   public void flip(){
     face = (int) (Math.random()*2);
