@@ -13,22 +13,23 @@ Create a client class with 3 instances of the car class. The client class should
 
 
 public class Car {
-  public static void main(String[] args) {
     //makes of the Car
     private String make;
     private double mpg;      //miles per gallon
     private String model;
     private double tankSize; //in gallons
-    private double fuel;     //in gallons
-    private double carDistance;
+    double fuel;     //in gallons
+    double carDistance;
+    double fuelUsed;
 
     //construcotor for the car, initializes the instance variables for the Car.
-    public Car(String carMake, String carModel, double carMpg, double carTankSize){
+    public Car(String carMake, String carModel, double carMpg, double carTankSize, double carDroveDistance){
       make = carMake;
       model = carModel;
       mpg = carMpg;
-      tankSize = carTankeSize;
-      fuel = tankSize;
+      tankSize = carTankSize;
+      carDistance = carDroveDistance;
+      fuel = tankSize - (carDistance / mpg);
     }
     public String getMake(){
       return make;
@@ -48,15 +49,30 @@ public class Car {
     public double getCarDistance(){
       return carDistance;
     }
+    public double getFuel(){
+      return fuel;
+    }
+    public double newDistance(double addDistance){
+      fuel = fuel - ((carDistance + addDistance) / mpg);
+      carDistance += addDistance;
+      return carDistance;
+    }
 
     public String toString(){
       String result = "";
       result += "Make: " + make + "\n";
       result += "Model: " + model + "\n";
       result += "MPG: " + mpg + "\n";
-
+      result += "Fuel: " + fuel + "\n";
+      result += "Distance: " + carDistance + "\n";
+      return result;
     }
 
-
-  }
+    public double addFuel(double fuelAmount){
+        fuel += fuelAmount;
+        if (fuel > tankSize){
+          fuel = tankSize;
+        }
+        return  fuel;
+    }
 }
