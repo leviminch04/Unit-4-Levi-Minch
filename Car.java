@@ -22,7 +22,7 @@ public class Car {
     private double fuel;     //in gallons
     private double carDistance;
 
-    //construcotor for the car. initializes the instance variables for the Car.
+    //construcotor for the car, initializes the instance variables for the Car.
     public Car(String carMake, String carModel, double carMpg, double carTankSize){
       make = carMake;
       model = carModel;
