@@ -63,6 +63,7 @@ public class Car {
       result += "Make: " + make + "\n";
       result += "Model: " + model + "\n";
       result += "MPG: " + mpg + "\n";
+      result += "Tank Size: " + tankSize + "\n";
       result += "Fuel: " + fuel + "\n";
       result += "Distance: " + carDistance + "\n";
       return result;
