@@ -21,6 +21,7 @@ public class Car {
     double fuel;     //in gallons
     double carDistance;
     double fuelUsed;
+    double rounded;
 
     //construcotor for the car, initializes the instance variables for the Car.
     public Car(String carMake, String carModel, double carMpg, double carTankSize, double carDroveDistance){
@@ -69,11 +70,17 @@ public class Car {
       return result;
     }
 
-    public double addFuel(double fuelAmount){
+    public double addFuel(double fuelAmount) {
         fuel += fuelAmount;
-        if (fuel > tankSize){
-          fuel = tankSize;
+        if (fuel > tankSize) {
+            fuel = tankSize;
         }
         return  fuel;
+    }
+
+    public double round(double toRound){
+        rounded = toRound * 100;
+        rounded = (Math.round(rounded)) / 100;
+        return rounded;
     }
 }
