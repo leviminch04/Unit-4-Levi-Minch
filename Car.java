@@ -77,10 +77,4 @@ public class Car {
         }
         return  fuel;
     }
-
-    public double round(double toRound){
-        rounded = toRound * 100;
-        rounded = (Math.round(rounded)) / 100;
-        return rounded;
-    }
 }

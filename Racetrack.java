@@ -2,10 +2,10 @@ import java.util.Scanner;
 public class RaceTrack{
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    System.out.println("Whould you like to make your own car(true/false)");
-    System.out.println("If not I will run 3 atemated ones.");
+    System.out.println("Would you like to make your own car(true/false)");
+    System.out.println("If not I will run 3 automated ones.");
     boolean run = scan.nextBoolean();
-    if(run)
+    if(!run)
     {
       Car myCar = new Car("BMW", "Aventador", 1, 30, 10);
 
@@ -30,7 +30,7 @@ public class RaceTrack{
       System.out.println(carThree);
 
     }
-    if(!run)
+    if(run)
     {
       System.out.println("What is the make of your car?");
       String make = scan.next();
@@ -44,7 +44,9 @@ public class RaceTrack{
       double driveDistance = scan.nextDouble();
       Car yourCar = new Car(make, model, mpg, tankSize, driveDistance);
       System.out.println("\n" + yourCar);
-      System.out.println(make.round());
+      System.out.println(yourCar + "\n");
+      System.out.println(make.rounded());
+
     }
 
   }
