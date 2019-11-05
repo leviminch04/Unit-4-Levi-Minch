@@ -1,0 +1,8 @@
+
+1. get balence
+2. change balence
+3. password and username
+4. bank name
+5. account name
+6. lockdown if login is wrong x ammount of times
+
