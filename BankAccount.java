@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 public class BankAccount{
     private String password;
     private String username;
@@ -6,16 +7,17 @@ public class BankAccount{
     public int accountNumber;
     private double ammountInterest;
     private double ammountFromInterest;
+    DecimalFormat df = new DecimalFormat("#.##");
 
     public BankAccount(String newUsername, String newPassword, double newBalence){
         password = newUsername;
         username = newPassword;
         accountNumber = (int) (Math.random()*1000000) + 10000000;
-        balence = Math.round(newBalence*100) / 100;
+        balence = newBalence;
     }
 
-    public double getBalence() {
-        return balence;
+    public String getBalence() {
+        return df.format(balence);
     }
 
     public String getPassword() {
@@ -40,8 +42,7 @@ public class BankAccount{
         ammountInterest = interestsRate;
     }
     public void iterestsCalculator(int days){
-        ammountFromInterest = (balence)(ammountInterest)(days);
-        ammountFromInterest = Math.round(ammountFromInterest*100) / 100;
+        ammountFromInterest = (balence)*(ammountInterest)*(days);
         balence += ammountFromInterest;
     }
     public String toString(){
@@ -49,7 +50,7 @@ public class BankAccount{
         accountInfo += "Username: " + username + "\n";
         accountInfo += "Password: " + password + "\n";
         accountInfo += "Account Number: " + accountNumber + "\n";
-        accountInfo += "Balence: " + balence + "\n";
+        accountInfo += "Balence: " + df.format(balence) + "\n";
         return accountInfo;
     }
 }
