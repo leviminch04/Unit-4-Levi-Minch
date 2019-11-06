@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import BankAccount;
 public class BankAccountClient{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -11,8 +11,9 @@ public class BankAccountClient{
             System.out.println("What would you like your password to be? ");
             String password = scan.next();
             System.out.println("What is your account balence");
-            Double balence = scan.nextDouble();
+            double balence = scan.nextDouble();
             BankAccount userAccount = new BankAccount(username, password, balence);
+            userAccount.setInterests(1.09);
             System.out.println("Would you like to access your account (true/false)?");
             boolean accessAccount = scan.nextBoolean();
             if(accessAccount){
@@ -37,6 +38,9 @@ public class BankAccountClient{
                 }
                 System.out.println("How many days have passed? ");
                 int days = scan.nextInt();
+                userAccount.interestsCalculator(days);
+                System.out.println("You have gained " + userAccount.getAmmountFromInterest() +"$" + " from interest, new Stats: ");
+                System.out.println(userAccount.toString());
 
             }
         }

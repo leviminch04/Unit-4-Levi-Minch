@@ -41,10 +41,15 @@ public class BankAccount{
     public void setInterests(double interestsRate){
         ammountInterest = interestsRate;
     }
-    public void iterestsCalculator(int days){
+    public void interestsCalculator(int days){
         ammountFromInterest = (balence)*(ammountInterest)*(days);
         balence += ammountFromInterest;
     }
+
+    public String getAmmountFromInterest() {
+        return df.format(ammountFromInterest);
+    }
+
     public String toString(){
         String accountInfo = "";
         accountInfo += "Username: " + username + "\n";
