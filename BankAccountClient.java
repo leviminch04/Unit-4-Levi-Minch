@@ -12,7 +12,7 @@ public class BankAccountClient{
             System.out.println("What is your account balence");
             double balence = scan.nextDouble();
             BankAccount userAccount = new BankAccount(username, password, balence);
-            userAccount.setInterests(1.01);
+            userAccount.setInterests(1.005);
             System.out.println("Would you like to access your account (true/false)?");
             boolean accessAccount = scan.nextBoolean();
             if(accessAccount){
