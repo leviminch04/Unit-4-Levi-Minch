@@ -4,7 +4,7 @@ public class BankAccount{
     private String username;
     private double balence;
     public double interests;
-    public int accountNumber;
+    private int accountNumber;
     private double ammountInterest;
     private double ammountFromInterest;
     DecimalFormat df = new DecimalFormat("#.##");

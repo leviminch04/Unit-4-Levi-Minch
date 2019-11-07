@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import BankAccount;
 public class BankAccountClient{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -13,7 +12,7 @@ public class BankAccountClient{
             System.out.println("What is your account balence");
             double balence = scan.nextDouble();
             BankAccount userAccount = new BankAccount(username, password, balence);
-            userAccount.setInterests(1.09);
+            userAccount.setInterests(1.01);
             System.out.println("Would you like to access your account (true/false)?");
             boolean accessAccount = scan.nextBoolean();
             if(accessAccount){
