@@ -7,7 +7,7 @@ public class BankAccount{
     private int accountNumber;
     private double ammountInterest;
     private double ammountFromInterest;
-    DecimalFormat df = new DecimalFormat("#.##");
+    private DecimalFormat df = new DecimalFormat("#.##");
 
     public BankAccount(String newUsername, String newPassword, double newBalence){
         password = newUsername;
